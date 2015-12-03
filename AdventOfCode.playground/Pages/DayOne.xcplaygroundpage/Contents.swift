@@ -31,13 +31,7 @@ To what floor do the instructions take Santa?
 func partOne(string:String) -> Int {
     var floor = 0
     for character in string.characters {
-        if character == "(" {
-            floor++
-        }
-        
-        if character == ")" {
-            floor--
-        }
+        floor += (character == "(" ? 1 : -1)
     }
     
     return floor
@@ -55,13 +49,7 @@ What is the position of the character that causes Santa to first enter the basem
 func partTwo(string:String) -> Int {
     var floor = 0
     for (index, character) in string.characters.enumerate() {
-        if character == "(" {
-            floor++
-        }
-        
-        if character == ")" {
-            floor--
-        }
+        floor += (character == "(" ? 1 : -1)
         
         if floor == -1 {
             return index+1
@@ -71,7 +59,7 @@ func partTwo(string:String) -> Int {
     return 0
 }
 
-var string = Helpers.readContents("dayOne")
+var string = Helpers.readContents("day1")
 partOne(string)
 
 partTwo(string)

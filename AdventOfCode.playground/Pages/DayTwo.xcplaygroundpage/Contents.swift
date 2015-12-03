@@ -71,7 +71,7 @@ func partTwoSingle(string: String) -> Int {
 
 var string:String
 
-string = Helpers.readContents("dayTwo")
+string = Helpers.readContents("day2")
 partOne(string)
 
 partTwo(string)
