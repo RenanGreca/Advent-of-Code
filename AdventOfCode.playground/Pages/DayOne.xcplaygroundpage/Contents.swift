@@ -29,6 +29,8 @@ For example:
 To what floor do the instructions take Santa?
 */
 func partOne(string:String) -> Int {
+    //return 2*string.stringByReplacingOccurrencesOfString(")", withString: "").characters.count - string.characters.count
+    
     var floor = 0
     for character in string.characters {
         floor += (character == "(" ? 1 : -1)
@@ -59,7 +61,7 @@ func partTwo(string:String) -> Int {
     return 0
 }
 
-var string = Helpers.readContents("day1")
+var string = Helpers.readContents("input")
 partOne(string)
 
 partTwo(string)

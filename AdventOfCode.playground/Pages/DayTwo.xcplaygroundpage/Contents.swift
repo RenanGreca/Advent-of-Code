@@ -57,11 +57,9 @@ func partTwo(string:String) -> Int {
 
 func partTwoSingle(string: String) -> Int {
     let numbers = string.characters.split {$0 == "x"}.map { String($0) }
-    let sides = [Int(numbers[0])!, Int(numbers[1])!, Int(numbers[2])!]
-    sides.sort()
-    let l = sides[0]
-    let h = sides[1]
-    let w = sides[2]
+    let l = Int(numbers[0])!
+    let h = Int(numbers[1])!
+    let w = Int(numbers[2])!
     
     let perimeter = min(2*(l+h), 2*(h+w), 2*(l+w))
     
@@ -71,7 +69,7 @@ func partTwoSingle(string: String) -> Int {
 
 var string:String
 
-string = Helpers.readContents("day2")
+string = Helpers.readContents("input")
 partOne(string)
 
 partTwo(string)

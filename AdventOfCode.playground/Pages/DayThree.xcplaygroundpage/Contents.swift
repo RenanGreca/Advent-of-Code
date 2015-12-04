@@ -79,7 +79,7 @@ func partTwo(string:String) -> Int {
     return sets[0].union(sets[1]).count
 }
 
-var string = Helpers.readContents("day3")
+var string = Helpers.readContents("input")
 partOne(string)
 
 partTwo(string)
