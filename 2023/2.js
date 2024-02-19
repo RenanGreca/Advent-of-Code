@@ -10,7 +10,7 @@ xtwone3four
 zoneight234
 7pqrstsixteen`
 // const input = await downloadInput('http://adventofcode.com/2023/day/1/input')
-const input = readFileSync('2023/1.txt', 'utf8')
+const input = readFileSync('1.txt', 'utf8')
 const lines = input.split('\n')
 
 const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
@@ -29,7 +29,7 @@ const digitMap = {
 }
 
 function extractDigits(line) {
-  console.log(line)
+  // console.log(line)
   for (let i = 0; i<line.length; i++) {
     // console.log(i, line[i])
     for (const [number, digit] of Object.entries(digitMap)) {
@@ -47,13 +47,14 @@ function extractDigits(line) {
 let sum = 0
 for (const line of lines) {
   const numbers = extractDigits(line)
+  console.log(`${line}: ${numbers}`)
   if (numbers.length == 0) {
     continue
   }
   const a = numbers[0]
   const b = numbers[numbers.length - 1]
   const c = Number(a+b)
-  console.log(a, b, c)
+  console.log(`${a} + ${b} = ${c}`)
   sum += c
 }
 console.log(sum)
